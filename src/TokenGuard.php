@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Auth\GuardHelpers;
+use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use Carbon\Carbon;
+use Cache;
 
 
 class TokenGuard implements Guard
@@ -128,6 +131,13 @@ class TokenGuard implements Guard
         $this->token = $this->generateAuthorizationToken();
 
         Cache::put('auth:' . $this->token, compact('user_id', 'expires_on'), $lifetime);
+
+        // If we have an event dispatcher instance set we will fire an event so that
+        // any listeners will hook into the authentication events and run actions
+        // based on the login and logout events fired from the guard instances.
+        $this->fireLoginEvent($user);
+
+        $this->setUser($user);
     }
 
     /**
@@ -180,6 +190,19 @@ class TokenGuard implements Guard
             $this->events->fire(new Events\Attempting(
                 $credentials, false, $login
             ));
+        }
+    }
+
+    /**
+     * Fire the login event if the dispatcher is set.
+     *
+     * @param  \Illuminate\Contracts\Auth\Authenticatable  $user
+     * @return void
+     */
+    protected function fireLoginEvent($user)
+    {
+        if (isset($this->events)) {
+            $this->events->fire(new Events\Login($user, false));
         }
     }
 
