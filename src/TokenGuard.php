@@ -3,12 +3,12 @@
 namespace IgetMaster\TokenAuth;
 
 use Illuminate\Http\Request;
-use Illuminate\Contracts\Auth\Guard
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Auth\UserProvider;
 use Illuminate\Auth\GuardHelpers;
 
 
-class TokenGuard extends Guard
+class TokenGuard implements Guard
 {
     use GuardHelpers;
 
@@ -187,5 +187,17 @@ class TokenGuard extends Guard
             $token = str_random();
         } while (Cache::has("auth:${token}"));
         return $token;
+    }
+
+    /**
+     * Determine if the user matches the credentials.
+     *
+     * @param  mixed  $user
+     * @param  array  $credentials
+     * @return bool
+     */
+    protected function hasValidCredentials($user, $credentials)
+    {
+        return ! is_null($user) && $this->provider->validateCredentials($user, $credentials);
     }
 }

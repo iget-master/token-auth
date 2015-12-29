@@ -1,6 +1,7 @@
 <?php
 namespace IgetMaster\TokenAuth;
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
 
 class TokenAuthServiceProvider extends ServiceProvider
