@@ -1,5 +1,5 @@
 {
-  "name": "iget-master/material-admin",
+  "name": "iget-master/token-auth",
   "description": "A simple token based authentication guard for Laravel 5.2",
   "authors": [
     {
