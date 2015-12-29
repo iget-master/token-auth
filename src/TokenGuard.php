@@ -152,6 +152,14 @@ class TokenGuard implements Guard
     }
 
     /**
+     * @return null|string
+     */
+    public function getToken()
+    {
+        return $this->token;
+    }
+
+    /**
      * @return string|null
      */
     protected function getAuthorizationToken()

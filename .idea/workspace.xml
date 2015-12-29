@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="dbadc0ee-95a7-480c-bd01-a3b423ddd238" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TokenAuthServiceProvider.php" afterPath="$PROJECT_DIR$/src/TokenAuthServiceProvider.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/TokenGuard.php" afterPath="$PROJECT_DIR$/src/TokenGuard.php" />
     </list>
     <ignored path="token-auth.iws" />
@@ -49,8 +48,8 @@
       <file leaf-file-name="TokenGuard.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/TokenGuard.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.84713376">
-              <caret line="200" column="16" selection-start-line="200" selection-start-column="16" selection-end-line="200" selection-end-column="16" />
+            <state vertical-scroll-proportion="2.4140127">
+              <caret line="210" column="1" selection-start-line="210" selection-start-column="1" selection-end-line="210" selection-end-column="1" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
               </folding>
@@ -376,8 +375,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/TokenGuard.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84713376">
-          <caret line="200" column="16" selection-start-line="200" selection-start-column="16" selection-end-line="200" selection-end-column="16" />
+        <state vertical-scroll-proportion="2.4140127">
+          <caret line="210" column="1" selection-start-line="210" selection-start-column="1" selection-end-line="210" selection-end-column="1" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
           </folding>
