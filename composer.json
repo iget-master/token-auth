@@ -1,0 +1,23 @@
+{
+  "name": "iget-master/material-admin",
+  "description": "A simple token based authentication guard for Laravel 5.2",
+  "authors": [
+    {
+      "name": "Elias Soares",
+      "email": "esoares@iget.com.br"
+    }
+  ],
+  "require": {
+    "php": ">=5.6.0",
+    "illuminate/support": "5.2.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "IgetMaster\\MaterialAdmin\\": "src/"
+    }
+  },
+  "scripts": {
+
+  },
+  "minimum-stability": "stable"
+}
