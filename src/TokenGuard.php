@@ -67,11 +67,11 @@ class TokenGuard implements Guard
 
         $this->token =  $this->getAuthorizationToken();
 
-        if (! empty($token)) {
+        if (! empty($this->token)) {
             $authorization = Cache::get('auth:' . $this->token);
 
             if ($authorization) {
-                $user = $this->provider->retrieveById($authorization['id']);
+                $user = $this->provider->retrieveById($authorization['user_id']);
             }
         }
 
@@ -124,7 +124,7 @@ class TokenGuard implements Guard
      */
     public function login(AuthenticatableContract $user)
     {
-        $lifetime = config('auth.lifetime');
+        $lifetime = config('session.lifetime');
 
         $user_id = $user->getAuthIdentifier();
         $expires_on = Carbon::now()->addMinutes($lifetime);
@@ -174,7 +174,7 @@ class TokenGuard implements Guard
      */
     protected function getAuthorizationToken()
     {
-        return $this->request->bearerToken();
+        return $this->request->header('Authorization');
     }
 
     /**
