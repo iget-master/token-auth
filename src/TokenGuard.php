@@ -141,6 +141,19 @@ class TokenGuard implements Guard
     }
 
     /**
+     * Log the given user ID into the application.
+     *
+     * @param  mixed  $id
+     * @return \Illuminate\Contracts\Auth\Authenticatable
+     */
+    public function loginUsingId($id)
+    {
+        $this->login($user = $this->provider->retrieveById($id));
+
+        return $user;
+    }
+
+    /**
      * Log the user out of the application.
      *
      * @return void
