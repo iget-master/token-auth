@@ -42,7 +42,7 @@ public function getLogin(Request $request)
 **Remember** to include the Request class at top of your controller class:
 
 ```php
-use App\Http\Requests\Request;
+use Illuminate\Http\Request;
 ```
 
 You should change `session.lifetime` configuration to change the token's lifetime.
