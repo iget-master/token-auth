@@ -39,4 +39,10 @@ public function getLogin(Request $request)
 }
 ```
 
+**Remember** to include the Request class at top of your controller class:
+
+```
+use App\Http\Requests\Request;
+```
+
 You should change `session.lifetime` configuration to change the token's lifetime.
