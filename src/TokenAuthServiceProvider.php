@@ -1,4 +1,10 @@
 <?php
+/**
+ * Copyright (c) 2016 IGET Serviços em comunicação digital LTDA - All rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ */
+
 namespace IgetMaster\TokenAuth;
 
 use Illuminate\Support\Facades\Auth;
@@ -14,10 +20,13 @@ class TokenAuthServiceProvider extends ServiceProvider
     public function boot()
     {
         Auth::extend('iget-token', function($app, $name, array $config) {
-            return new TokenGuard(
+            $guard = new TokenGuard(
                 Auth::createUserProvider($config['provider']),
                 $app['request']
             );
+
+            $app->refresh('request', $guard, 'setRequest');
+            return $guard;
         });
     }
     /**

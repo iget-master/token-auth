@@ -1,4 +1,9 @@
 <?php
+/**
+ * Copyright (c) 2016 IGET Serviços em comunicação digital LTDA - All rights Reserved
+ * Unauthorized copying of this file, via any medium is strictly prohibited
+ * Proprietary and confidential
+ */
 
 namespace IgetMaster\TokenAuth;
 
@@ -141,19 +146,6 @@ class TokenGuard implements Guard
     }
 
     /**
-     * Log the given user ID into the application.
-     *
-     * @param  mixed  $id
-     * @return \Illuminate\Contracts\Auth\Authenticatable
-     */
-    public function loginUsingId($id)
-    {
-        $this->login($user = $this->provider->retrieveById($id));
-
-        return $user;
-    }
-
-    /**
      * Log the user out of the application.
      *
      * @return void
@@ -175,11 +167,32 @@ class TokenGuard implements Guard
     }
 
     /**
+     * Reset user to allow testing
+     */
+    public function resetUser()
+    {
+        $this->user = null;
+    }
+
+    /**
      * @return null|string
      */
     public function getToken()
     {
         return $this->token;
+    }
+
+    /**
+     * Set the current request instance.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return $this
+     */
+    public function setRequest(Request $request)
+    {
+        $this->request = $request;
+
+        return $this;
     }
 
     /**
