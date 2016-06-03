@@ -191,7 +191,7 @@ class TokenGuard implements Guard
     {
         $authentication = Cache::get('auth:' . $this->token);
 
-        return $authentication ? $authentication->expires_on : null;
+        return $authentication ? $authentication['expires_on'] : null;
     }
 
     /**
