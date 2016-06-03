@@ -183,6 +183,18 @@ class TokenGuard implements Guard
     }
 
     /**
+     * Get the expiration datetime for the current authorization token
+     *
+     * @return \Carbon\Carbon|null
+     */
+    public function getExpiration()
+    {
+        $authentication = Cache::get('auth:' . $this->token);
+
+        return $authentication ? $authentication->expires_on;
+    }
+
+    /**
      * Set the current request instance.
      *
      * @param  \Illuminate\Http\Request  $request
