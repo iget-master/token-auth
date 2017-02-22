@@ -5,7 +5,7 @@
  * Proprietary and confidential
  */
 
-namespace IgetMaster\TokenAuth;
+namespace Iget\TokenAuth;
 
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Guard;

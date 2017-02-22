@@ -1,6 +1,6 @@
 {
   "name": "iget-master/token-auth",
-  "description": "A simple token based authentication guard for Laravel 5.2",
+  "description": "A simple token based authentication guard for Laravel 5.4",
   "authors": [
     {
       "name": "Elias Soares",
@@ -9,12 +9,12 @@
   ],
   "require": {
     "php": ">=5.6.0",
-    "illuminate/support": "5.2.*",
+    "laravel/framework": "5.4.*",
     "nesbot/carbon": "~1.19"
   },
   "autoload": {
     "psr-4": {
-      "IgetMaster\\TokenAuth\\": "src/"
+      "Iget\\TokenAuth\\": "src/"
     }
   },
   "scripts": {

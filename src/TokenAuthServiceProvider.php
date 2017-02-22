@@ -5,7 +5,7 @@
  * Proprietary and confidential
  */
 
-namespace IgetMaster\TokenAuth;
+namespace Iget\TokenAuth;
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\ServiceProvider;
